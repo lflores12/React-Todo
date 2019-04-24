@@ -8,7 +8,7 @@ const TodoList = props => {
     return (
         <div>
            {props.todos.map(todo =>(
-           <Todo todo = {todo}/>
+           <Todo todos = {todo}/>
            ))} 
         </div>
     );
