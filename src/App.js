@@ -36,16 +36,26 @@ class App extends React.Component {
 addTodo = event => {
   event.preventDefault();
   this.setState({
+    arrayOnState: [...this.state.arrayOnState, this.state.todo],
+    todo: {
+      task: '',
+      id: '',
+      completed: ''
+    }
 
-  })
-}
+  });
+};
 
   render() {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
         <TodoList todos = {this.state.todoOnState} />
-        <TodoForm />
+        <TodoForm 
+        handleAddTodo = {this.addTodo}
+        value = {this.state.todo}
+        
+        />
       </div>
     );
   }
