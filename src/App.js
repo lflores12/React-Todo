@@ -1,6 +1,7 @@
 import React from 'react';
 import TodoList from './components/TodoComponents/TodoList';
 import TodoForm from './components/TodoComponents/TodoForm';
+import './components/TodoComponents/Todo.css';
 
 const todos = [
   {
@@ -39,7 +40,7 @@ class App extends React.Component {
   toggleCompleted = id => {
     this.setState({
       todos: this.state.todos.map(item => 
-       item.id === id ?{...item, completed: !item.completed} : item
+       item.id === id ? {...item, completed: !item.completed} : item
        )
     });
   };
@@ -54,15 +55,14 @@ class App extends React.Component {
     return (
       <div className = 'App'>
         <h2>Welcome to your Todo App!</h2>
+        <TodoForm 
+        addTodo = {this.addTodo}
+        />
         <TodoList 
         todos = {this.state.todos}
         toggleCompleted = {this.toggleCompleted}
         />
-        <TodoForm 
-        addTodo = {this.addTodo}
-        />
-
-        <button className = 'clr-btn' onClick = {this.removeCompleted}>Clear Completed</button>
+        <button className = 'clear-btn' onClick = {this.removeCompleted}>Clear Completed</button>
       </div>
     );
   }

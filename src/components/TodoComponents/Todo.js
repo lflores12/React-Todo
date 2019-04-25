@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Todo = props => {
-   let classNames = 'item';
+   let classNames = 'item ';
     if (props.todos.completed){
         classNames += 'completed';
     }

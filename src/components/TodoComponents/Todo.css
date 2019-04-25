@@ -1,3 +1,4 @@
+
 html,
 body {
   width: 100%;
@@ -7,7 +8,10 @@ body {
 }
 
 body {
-  background-color: whitesmoke;
+  background-color: lightgray;
+  display: flex;
+  align-content: center;
+  justify-content: center;
 }
 
 h1,
@@ -20,73 +24,68 @@ div,
 p,
 span {
   color: white;
+  font-family: 'Roboto', sans-serif;
 }
 
 .App {
     font-family: sans-serif;
     text-align: center;
-    padding: 0 36px;
+    padding: 100px;
     max-width: 665px;
-    margin: 0 auto;
-    background: #e64944;
+    margin: 100px auto;
+    background: black;
+    border-radius: 10px
   }
-  
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  h1 {
-    text-align: left;
-  }
-  
+
   .todo-list {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
     width: 100%;
     margin: 0 auto;
   }
-  .item {
-    background-color: black;
-    width: 45%;
-    text-align: left;
-    margin: 4px 0;
-    padding-left: 8px;
-  }
-  
-  .item.completed {
-    background-color: #d17d7c;
-    text-decoration: line-through;
-  }
-  form {
-    width: 50%;
+
+.item {
+  background-color: #e64944;
+  width: 45%;
+  text-align: left;
+  margin: 4px 0;
+  padding-left: 10px;
+  border-radius: 30px;
+}
+
+.item.completed {
+  background-color: #d17d7c;
+  text-decoration: line-through;
+}
+
+form {
     display: flex;
     justify-content: center;
+    margin-bottom: 20px;
   }
   form > input {
-    background-color: #2d2d37;
+    background-color: gray;
     border: 0;
     padding: 6px 0;
     font-size: 1rem;
     width: 240px;
     outline: 0;
-    color: white;
-    border-bottom: 1px solid #e64944;
+    color: gray;
     margin-right: 8px;
   }
   
   button {
-    background-color: black;
+    background-color: #e64944;
     border: 1px solid #e64944;
     color: white;
     font-size: 16px;
     padding: 6px 14px;
+    border-radius: 30px;
   }
   
   input::placeholder {
-    color: #e64944;
+    color: black;
     opacity: 1;
   }
   
