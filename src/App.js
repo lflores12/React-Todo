@@ -30,13 +30,21 @@ class App extends React.Component {
         id: '',
         completed: ''
       }
-    }
-  }
+    };
+  };
+
+  toggleCompleted = id => {
+    this.setState({
+      todoOnState: this.state.todoOnState.map(todo => 
+       todo.id === id ?{...todo, completed: !todo.completed} :todo
+       )
+    });
+  };
 
 addTodo = event => {
   event.preventDefault();
   this.setState({
-    arrayOnState: [...this.state.arrayOnState, this.state.todo],
+    todoOnState: [...this.state.todoOnState, this.state.todo],
     todo: {
       task: '',
       id: '',
@@ -46,15 +54,29 @@ addTodo = event => {
   });
 };
 
+handleChanges = event => {
+  this.setState({
+    todo: {
+      ...this.state.todo,
+      task: event.target.value,
+      id: Date.now(),
+      completed: false
+    }
+  });
+};
+
   render() {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
-        <TodoList todos = {this.state.todoOnState} />
+        <TodoList 
+        todos = {this.state.todoOnState}
+        toggleCompleted = {this.toggleCompleted}
+        />
         <TodoForm 
         handleAddTodo = {this.addTodo}
-        value = {this.state.todo}
-        
+        value = {this.state.todo.task}
+        handleChange = {this.handleChanges}
         />
       </div>
     );
