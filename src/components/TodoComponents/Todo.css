@@ -1,0 +1,94 @@
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: lightgray;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+p,
+span {
+  color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+.App {
+    font-family: sans-serif;
+    text-align: center;
+    padding: 100px;
+    max-width: 665px;
+    margin: 100px auto;
+    background: black;
+    border-radius: 10px
+  }
+
+  .todo-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+.item {
+  background-color: #e64944;
+  width: 45%;
+  text-align: left;
+  margin: 4px 0;
+  padding-left: 10px;
+  border-radius: 30px;
+}
+
+.item.completed {
+  background-color: #d17d7c;
+  text-decoration: line-through;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  form > input {
+    background-color: gray;
+    border: 0;
+    padding: 6px 0;
+    font-size: 1rem;
+    width: 240px;
+    outline: 0;
+    color: gray;
+    margin-right: 8px;
+  }
+  
+  button {
+    background-color: #e64944;
+    border: 1px solid #e64944;
+    color: white;
+    font-size: 16px;
+    padding: 6px 14px;
+    border-radius: 30px;
+  }
+  
+  input::placeholder {
+    color: black;
+    opacity: 1;
+  }
+  
+  .clear-btn {
+    margin-top: 16px;
+  }
